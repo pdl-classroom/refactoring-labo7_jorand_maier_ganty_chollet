@@ -7,7 +7,7 @@ public class Orders {
 
     private List<Order> orderList = new ArrayList<Order>();
 
-    public void AddOrder(Order order) {
+    public void addOrder(Order order) {
         orderList.add(order);
     }
 
