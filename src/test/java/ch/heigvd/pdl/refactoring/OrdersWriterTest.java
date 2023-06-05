@@ -19,7 +19,7 @@ class OrdersWriterTest {
     }
 
     @Test
-    public void OneOrder() {
+    void OneOrder() {
         String order111 = "{\"id\": 111, \"products\": []}";
         assertEquals("{\"orders\": [" + order111 + "]}", new OrdersWriter(orders).getContents());
     }
