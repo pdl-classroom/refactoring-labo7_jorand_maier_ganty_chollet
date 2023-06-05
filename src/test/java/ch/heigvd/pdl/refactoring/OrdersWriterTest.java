@@ -14,7 +14,7 @@ class OrdersWriterTest {
     }
 
     @Test
-    public void NoOrder() {
+    void NoOrder() {
         assertEquals("{\"orders\": []}", new OrdersWriter(new Orders()).getContents());
     }
 
