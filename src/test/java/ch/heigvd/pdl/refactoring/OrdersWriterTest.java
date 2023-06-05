@@ -40,7 +40,7 @@ class OrdersWriterTest {
     }
 
     @Test
-    public void OneOrderWithOneProductNoSize() {
+    void OneOrderWithOneProductNoSize() {
         order111.addProduct(new Product("Pot", 2, -1, 16.50, "SGD"));
         String order111Json = JsonOrder111WithProduct("{\"code\": \"Pot\", \"color\": \"red\", \"price\": 16.5, \"currency\": \"SGD\"}");
         assertEquals("{\"orders\": [" + order111Json + "]}", new OrdersWriter(orders).getContents());
