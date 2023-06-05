@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class OrdersWriterTest {
+class OrdersWriterTest {
     Orders orders = new Orders();
     Order order111 = new Order(111);
 
