@@ -11,18 +11,6 @@ public class Order {
         this.id = id;
     }
 
-    public int getOrderId() {
-        return id;
-    }
-
-    public int getProductsCount() {
-        return products.size();
-    }
-
-    public Product getProduct(int j) {
-        return products.get(j);
-    }
-
     public void addProduct(Product product) {
         products.add(product);
     }
@@ -30,13 +18,13 @@ public class Order {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder("{\"id\": ");
-        sb.append(getOrderId());
+        sb.append(id);
         sb.append(", \"products\": [");
         for (Product product : products) {
             sb.append(product);
         }
 
-        if (getProductsCount() > 0) {
+        if (!products.isEmpty()) {
             sb.delete(sb.length() - 2, sb.length());
         }
 
