@@ -37,4 +37,49 @@ public class Product {
     public String getCurrency() {
         return currency;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("{\"code\": \"");
+        sb.append(getCode());
+        sb.append("\", \"color\": \"");
+        sb.append(getColorFor(this));
+        sb.append("\", ");
+
+        if (getSize() != Product.SIZE_NOT_APPLICABLE) {
+            sb.append("\"size\": \"");
+            sb.append(getSizeFor(this));
+            sb.append("\", ");
+        }
+
+        sb.append("\"price\": ");
+        sb.append(getPrice());
+        sb.append(", \"currency\": \"");
+        sb.append(getCurrency());
+        sb.append("\"}, ");
+
+        return sb.toString();
+
+    }
+
+    private String getSizeFor(Product product) {
+        return switch (product.getSize()) {
+            case 1 -> "XS";
+            case 2 -> "S";
+            case 3 -> "M";
+            case 4 -> "L";
+            case 5 -> "XL";
+            case 6 -> "XXL";
+            default -> "Invalid Size";
+        };
+    }
+
+    private String getColorFor(Product product) {
+        return switch (product.getColor()) {
+            case 1 -> "blue";
+            case 2 -> "red";
+            case 3 -> "yellow";
+            default -> "no color";
+        };
+    }
 }
