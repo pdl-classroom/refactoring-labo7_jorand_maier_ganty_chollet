@@ -20,30 +20,10 @@ public class Product {
         this(code, color, Size.NO_SIZE, price, currency);
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("{\"code\": \"");
-        sb.append(getCode());
+        sb.append(code);
         sb.append("\", \"color\": \"");
         sb.append(color);
         sb.append("\", ");
@@ -55,9 +35,9 @@ public class Product {
         }
 
         sb.append("\"price\": ");
-        sb.append(getPrice());
+        sb.append(price);
         sb.append(", \"currency\": \"");
-        sb.append(getCurrency());
+        sb.append(currency);
         sb.append("\"}, ");
 
         return sb.toString();
