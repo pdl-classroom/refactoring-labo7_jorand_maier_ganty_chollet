@@ -16,7 +16,7 @@ public class Product {
         this.currency = currency;
     }
     public Product(String code, int color, double price, String currency) {
-       this(code, color, Size.NO_SIZE, price, currency);
+        this(code, color, Size.NO_SIZE, price, currency);
     }
 
     public String getCode() {
@@ -47,9 +47,9 @@ public class Product {
         sb.append(getColorFor(this));
         sb.append("\", ");
 
-        if (getSize() != Product.SIZE_NOT_APPLICABLE) {
+        if (size != Size.NO_SIZE) {
             sb.append("\"size\": \"");
-            sb.append(getSizeFor(this));
+            sb.append(size);
             sb.append("\", ");
         }
 
@@ -61,18 +61,6 @@ public class Product {
 
         return sb.toString();
 
-    }
-
-    private String getSizeFor(Product product) {
-        return switch (product.getSize()) {
-            case 1 -> "XS";
-            case 2 -> "S";
-            case 3 -> "M";
-            case 4 -> "L";
-            case 5 -> "XL";
-            case 6 -> "XXL";
-            default -> "Invalid Size";
-        };
     }
 
     private String getColorFor(Product product) {
