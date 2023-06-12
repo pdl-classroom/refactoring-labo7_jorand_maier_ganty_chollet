@@ -6,11 +6,11 @@ public class Product {
 
     private String code;
     private int color;
-    private int size;
+    private Size size;
     private double price;
     private String currency;
 
-    public Product(String code, int color, int size, double price, String currency) {
+    public Product(String code, int color, Size size, double price, String currency) {
         this.code = code;
         this.color = color;
         this.size = size;
@@ -26,7 +26,7 @@ public class Product {
         return color;
     }
 
-    public int getSize() {
+    public Size getSize() {
         return size;
     }
 
