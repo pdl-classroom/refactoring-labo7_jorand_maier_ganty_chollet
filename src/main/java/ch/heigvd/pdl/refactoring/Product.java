@@ -1,21 +1,22 @@
 package ch.heigvd.pdl.refactoring;
 
 public class Product {
-    
+
     private String code;
-    private int color;
+    private Color color;
     private Size size;
     private double price;
     private String currency;
 
-    public Product(String code, int color, Size size, double price, String currency) {
+    public Product(String code, Color color, Size size, double price, String currency) {
         this.code = code;
         this.color = color;
         this.size = size;
         this.price = price;
         this.currency = currency;
     }
-    public Product(String code, int color, double price, String currency) {
+
+    public Product(String code, Color color, double price, String currency) {
        this(code, color, Size.NO_SIZE, price, currency);
     }
 
@@ -23,7 +24,7 @@ public class Product {
         return code;
     }
 
-    public int getColor() {
+    public Color getColor() {
         return color;
     }
 

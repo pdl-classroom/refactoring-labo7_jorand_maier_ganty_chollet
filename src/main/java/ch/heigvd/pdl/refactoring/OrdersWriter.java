@@ -28,7 +28,7 @@ public class OrdersWriter {
                 sb.append(product.getCode());
                 sb.append("\", ");
                 sb.append("\"color\": \"");
-                sb.append(getColorFor(product));
+                sb.append(product.getColor());
                 sb.append("\", ");
 
                 if (product.getSize() != Size.NO_SIZE) {
@@ -58,14 +58,5 @@ public class OrdersWriter {
         }
 
         return sb.append("]}").toString();
-    }
-
-    private String getColorFor(Product product) {
-        return switch (product.getColor()) {
-            case 1 -> "blue";
-            case 2 -> "red";
-            case 3 -> "yellow";
-            default -> "no color";
-        };
     }
 }
