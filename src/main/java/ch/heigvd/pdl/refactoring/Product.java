@@ -17,7 +17,7 @@ public class Product {
     }
 
     public Product(String code, Color color, double price, String currency) {
-       this(code, color, Size.NO_SIZE, price, currency);
+        this(code, color, Size.NO_SIZE, price, currency);
     }
 
     public String getCode() {
@@ -39,4 +39,29 @@ public class Product {
     public String getCurrency() {
         return currency;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("{\"code\": \"");
+        sb.append(getCode());
+        sb.append("\", \"color\": \"");
+        sb.append(color);
+        sb.append("\", ");
+
+        if (size != Size.NO_SIZE) {
+            sb.append("\"size\": \"");
+            sb.append(size);
+            sb.append("\", ");
+        }
+
+        sb.append("\"price\": ");
+        sb.append(getPrice());
+        sb.append(", \"currency\": \"");
+        sb.append(getCurrency());
+        sb.append("\"}, ");
+
+        return sb.toString();
+
+    }
+
 }
