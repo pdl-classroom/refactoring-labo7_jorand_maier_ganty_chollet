@@ -13,23 +13,8 @@ public class OrdersWriter {
     public String getContents() {
         StringBuilder sb = new StringBuilder("{\"orders\": [");
 
-        for (int i = 0; i < orders.size(); i++) {
-            Order order = orders.get(i);
-            sb.append("{");
-            sb.append("\"id\": ");
-            sb.append(order.getOrderId());
-            sb.append(", ");
-            sb.append("\"products\": [");
-            for (int j = 0; j < order.getProductsCount(); j++) {
-                sb.append(order.getProduct(j));
-            }
-
-            if (order.getProductsCount() > 0) {
-                sb.delete(sb.length() - 2, sb.length());
-            }
-
-            sb.append("]");
-            sb.append("}, ");
+        for (Order order : orders) {
+            sb.append(order);
         }
 
         if (orders.size() > 0) {
@@ -38,5 +23,4 @@ public class OrdersWriter {
 
         return sb.append("]}").toString();
     }
-
 }
